@@ -21,7 +21,7 @@ Customer details: ZIP code, order item ID.
 🐍 Python Requirements
 Let's jump into the Python packages you need. Within the Python environment of your choice, run:
 
-git clone https://github.com/zenml-io/zenml-projects.git
+git clone https://github.com/phanindrakumar08/Reatail-price-optimization.git
 pip install -r requirements.txt
 
 
@@ -45,7 +45,7 @@ zenml stack register local_bentoml_stack \
   -e mlflow_tracker
   --set
 
-  
+
 🚀 Training Pipeline
 Our standard training pipeline consists of several steps:
 
