@@ -27,24 +27,26 @@ pip install -r requirements.txt
 
 Starting with ZenML 0.20.0, ZenML comes bundled with a React-based dashboard. This dashboard allows you to observe your stacks, stack components and pipeline DAGs in a dashboard interface. To access this, you need to launch the ZenML Server and Dashboard locally, but first you must install the optional dependencies for the ZenML server:
 
-pip install zenml["server"]
+pip install "zenml["server"]"
 zenml up
 
 If you are running the run_cid_pipeline.py` script, you will also need to install some integrations using ZenML:
 
 zenml integration install mlflow -y
 zenml integration install bentoml
+
 The project can only be executed with a ZenML stack that has an MLflow experiment tracker and BentoML model deployer as a component. Configuring a new stack with the two components are as follows:
 
-zenml experiment-tracker register mlflow_tracker --flavor=mlflow
+zenml experiment-tracker register mlflow_tracker_mlops --flavor=mlflow
 zenml model-deployer register bentoml_deployer --flavor=bentoml
 zenml stack register local_bentoml_stack \
   -a default \
   -o default \
   -d bentoml_deployer \
-  -e mlflow_tracker
+  -e mlflow_tracker_mlops
   --set
 
+zenml stack set local_bentoml_stack   
 
 🚀 Training Pipeline
 Our standard training pipeline consists of several steps:

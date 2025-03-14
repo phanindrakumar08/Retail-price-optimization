@@ -9,10 +9,9 @@ pandas==1.5.3
 Pillow==10.0.0
 Pillow==10.0.0
 python-dotenv==1.0.0
-rich==13.4.2
+rich>=12.0.0,<13.0.0
 scikit_learn==1.3.0
 scipy==1.11.1
 SQLAlchemy==1.4.41
 statsmodels==0.14.0
-typing_extensions==4.7.1
 zenml==0.42.1
